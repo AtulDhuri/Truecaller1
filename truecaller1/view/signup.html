@@ -1,0 +1,95 @@
+  <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyCkCGzy71R8KkJRDWANR_Qhoh7DIWbVyss"></script>
+<script type="text/javascript">
+if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function (p) {
+        var LatLng = new google.maps.LatLng(p.coords.latitude, p.coords.longitude);
+		//alert(LatLng);
+		document.getElementById("UserLocation").value=LatLng;
+      
+    });
+} else {
+    alert('Geo Location feature is not supported in this browser.');
+}
+</script>
+  <!-- <style>
+.hidden{
+  display: none;
+}
+
+</style> -->
+   <div class="section">
+      <div class="container">
+	  <div class="row"> <div class="col-md-12"> 
+						<h1 class="text-center">KYC - Know Your Caller</h1> </div></div>
+        <div class="row">
+		
+          <div class="col-md-12">
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                <h3 class="panel-title">Sign Up</h3>
+              </div>
+              <div class="panel-body">
+                <form role="form" method="POST" action="http://asquareholidays.com/insertdata1.php/" onsubmit="return checkall();">
+                  <div class="form-group">
+                    <label class="control-label" for="Username1">Name</label>
+                    <input class="form-control" placeholder="Enter Your Name" type="text" name="username" id="UserName" onkeyup="checkname();">
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label" for="exampleInputPassword1">Phone number</label>
+                    <input class="form-control" name="usernumber"  placeholder="Enter Your Number" id="UserNumber" class="form-control form-change-element" onkeyup="checkemail();">
+					<!-- <span id="mobile-valid" class="hidden mob">
+				<i class="fa fa-check pwd-valid"></i>Valid Mobile No
+			</span>  
+			<span id="folio-invalid" class="hidden mob-helpers">
+				<i class="fa fa-times mobile-invalid"></i>Invalid mobile No
+			</span> -->
+				<span id="number_status"></span>
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label" for="exampleInputPassword1">Your Location</label>
+                    <input class="form-control"  type="text" name="userloc" id="UserLocation" disabled="true">
+                  </div>
+                  <input type="submit" class="btn btn-success" name="submit_form" value="Submit">
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+	
+<!-- 	<script>
+$(document).ready(function(){
+  
+  $("#UserNumber").on("blur", function(){
+        var mobNum = $(this).val();
+        var filter = /^\d*(?:\.\d{1,2})?$/;
+
+          if (filter.test(mobNum)) {
+            if(mobNum.length==10){
+                  
+              $("#mobile-valid").removeClass("hidden");
+              $("#folio-invalid").addClass("hidden");
+			 
+			  
+             } else {
+                
+               $("#folio-invalid").removeClass("hidden");
+               $("#mobile-valid").addClass("hidden");
+			   
+                return false;
+              }
+            }
+            else {
+              
+              $("#folio-invalid").removeClass("hidden");
+              $("#mobile-valid").addClass("hidden");
+              return false;
+           }
+    
+  });
+  
+});
+
+
+</script> -->

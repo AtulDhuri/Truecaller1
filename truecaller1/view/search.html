@@ -1,0 +1,128 @@
+     
+ 
+<style>
+td{ 
+    color: aliceblue;
+    font-weight: bold;}
+
+.inf-content{
+    border:1px solid #DDDDDD;
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    border-radius:10px;
+    box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.3);
+}			                                                      
+
+</style>
+ 
+<div id="page-content-wrapper" ng-controller="myCtrl">
+          
+            <div class="container">
+               <div class="section section-primary">
+			   <div class="container">
+					<div class="row"> <div class="col-md-12"> 
+						<h1 class="text-center">KYC - Know Your Caller</h1> </div></div>
+							<div class="row"> 
+ <div class="col-md-offset-3 col-md-6"> 
+<form role="form" autocomplete="off"> 
+ <div class="form-group"> 
+ 
+ <div class="input-group"> 
+
+
+
+
+<input type="text"  class="form-control" ng-model="test.pnumber"  placeholder="Type the number here" id="enter" / >
+
+
+<!-- <button type="button" value="Search" ng-click="search=test.pnumber" id="search"  >Search Data</button> -->
+<span class="input-group-btn"> <a class="btn btn-success" style="background-color: black" type="submit" ng-click="search()" id="search">Search</a> 
+ </span> 
+  </div>
+ </div>
+ </form>
+ </div></div>
+ </div></div>
+ 
+ 
+
+<!-- <table class="table-responsive">
+ <tbody ng-repeat="x in mydata | filter : search | orderBy:'Fname' |  limitTo:10">
+<tr>
+<th> name</th>
+
+<th>number</th>
+</tr>
+<tr >
+
+<td>{{ x.Fname | uppercase}} </td>
+
+<td>{{x.pnumber}}</td>
+</tr>
+
+</table> -->
+
+ <div class="section section-default"> <div class="container">
+ <div class="row"> <div class="col-md-12"> 
+  </div></div>
+ <div class="row"> 
+ <div class="col-md-offset-3 col-md-6"> 
+<form role="form"> 
+ <div class="form-group"> 
+ 
+	<div class="input-group"> 
+
+
+
+
+			<table class="table table-condensed table-responsive table-user-information">
+			
+                <tbody ng-repeat="x in result" style="text-align="center">
+                   <!-- <h3 class="text-center">Details of the number</h3> -->
+                    <tr >    
+                        <td>
+                            <strong>
+                                <span class="text-primary"></span>    
+                            <img src="img/people.png" />                                       
+                            </strong>
+                        </td>
+                        <td class="text-primary">
+                           {{ x.Fname | uppercase}} 
+                        </td>
+                    </tr>
+                    <tr>        
+                        <td>
+                            <strong>
+                                <span class="text-primary"></span>  
+                                                          <img src="img/contact.png" />                                                                                      
+                            </strong>
+                        </td>
+                        <td class="text-primary">
+                            {{x.pnumber}}
+                        </td>
+                    </tr>
+					<tr>        
+                        <td>
+                            <strong>
+                                <span class="text-primary"></span>  
+                                                          <img src="img/location.png" />                                                                                      
+                            </strong>
+                        </td>
+                        <td class="text-primary">
+                            {{x.loc}}
+                        </td>
+                    </tr>
+
+                   
+                </tbody>
+            </table>
+	</div>
+ </div>
+ </form>
+ </div></div>
+ </div></div>
+
+
+        <!-- /#page-content-wrapper -->
+
+   
